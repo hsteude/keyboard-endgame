@@ -1,0 +1,122 @@
+points:
+  zones:
+    matrix:
+      columns:
+        outer_l:
+          key:
+            column_net: P4
+        pinky_l:
+          key:
+            column_net: P5
+        ring_l:
+          key:
+            column_net: P6
+        middle_l:
+          key:
+            column_net: P7
+        index_l:
+          key:
+            column_net: P8
+        inner_l:
+          key:
+            column_net: P9
+        inner_r:
+          key:
+            column_net: P10
+        index_r:
+          key:
+            column_net: P11
+        middle_r:
+          key:
+            column_net: P12
+        ring_r:
+          key:
+            column_net: P13
+        pinky_r:
+          key:
+            column_net: P14
+        outer_r:
+          key:
+            column_net: P14
+      rows:
+        bottom:
+          row_net: P21
+        home:
+          row_net: P20
+        top:
+          row_net: P19
+    mod_out_l:
+      anchor:
+        ref: [matrix_outer_l_bottom]
+        shift: [0, -1.1cy]
+      key:
+        name: mod_out_l
+        width: 1
+        row_net: P16
+        column_net: P4
+    mod_pinky_l:
+      anchor:
+        ref: [matrix_pinky_l_bottom]
+        shift: [0, -1.1cy]
+      key:
+        name: mod_pinky_l
+        width: 1
+        row_net: P16
+        column_net: P5
+    mod_ring_l:
+      anchor:
+        ref: [matrix_ring_l_bottom]
+        shift: [0, -1.1cy]
+      key:
+        name: mod_ring_l
+        width: 1
+        row_net: P16
+        column_net: P6
+    mod_middle_l:
+      anchor:
+        ref: [matrix_middle_l_bottom]
+        shift: [0, -1.1cy]
+      key:
+        name: mod_middle_l
+        width: 1
+        row_net: P16
+        column_net: P7
+    mod_index_l:
+      anchor:
+        ref: [matrix_index_l_bottom]
+        shift: [0, -1.1cy]
+      key:
+        name: mod_index_l
+        width: 1
+        row_net: P16
+        column_net: P8
+    space:
+      anchor:
+        ref: [matrix_inner_l_bottom]
+        shift: [0.5cy, -1.1cy]
+      key:
+        name: space
+        width: 2
+        row_net: P16
+        column_net: P8
+  key:
+    footprints:
+      - type: choc
+        nets:
+          from: =row_net
+          to: =column_net
+        params.keycaps: true
+      - type: diode
+        anchor:
+          shift: [0, -4.7]
+        nets:
+          from: =row_net
+          to: =column_net
+pcbs:
+  henriks_planck:
+    footprints:
+      - type: promicro
+        anchor:
+          - ref: [matrix_inner_l_top]
+            shift: [0, -0.6cy]
+            rotate: -90
