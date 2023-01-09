@@ -1,5 +1,3 @@
 .DS_Store
 ergogen-output/*
 !ergogen-output/.gitkeep
-KiCadProject/*
-!./KiCadProject/henriks_planck.kicad_pcb
